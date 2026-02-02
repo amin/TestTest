@@ -8,7 +8,9 @@ use App\Exceptions\NotFoundHttpException;
 
 class Router
 {
-    public function __construct(public array $routes) {}
+    public function __construct(public array $routes)
+    {
+    }
     public function direct(string $uri): string
     {
         $uri = parse_url($uri, PHP_URL_PATH);

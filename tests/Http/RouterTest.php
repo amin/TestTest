@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Tests;
+
 use App\Exceptions\NotFoundHttpException;
 use App\Http\Router;
 use PHPUnit\Framework\TestCase;

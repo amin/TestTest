@@ -14,7 +14,8 @@ class QueryBuilder
 
     public function __construct(
         private PDO $database
-    ) {}
+    ) {
+    }
 
     public function select(array $columns = ['*']): static
     {
@@ -67,7 +68,10 @@ class QueryBuilder
     public function first(): object
     {
         $result = $this->limit(1)->get();
-        if (!count($result)) throw new InvalidArgumentException('Record does not exist in database.');
+        if (!count($result)) {
+            throw new InvalidArgumentException('Record does not exist in database.');
+        };
+
         return reset($result);
     }
 
@@ -76,7 +80,9 @@ class QueryBuilder
         $statement = $this->database->prepare($this->query);
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_CLASS);
-        if (!count($result)) throw new InvalidArgumentException('Record does not exist in database.');
+        if (!count($result)) {
+            throw new InvalidArgumentException('Record does not exist in database.');
+        }
 
         return $result ?: [];
     }

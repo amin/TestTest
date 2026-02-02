@@ -6,12 +6,13 @@ namespace App;
 
 class Pokemon
 {
-    public function __construct(public string $name, public int $id) {}
+    public function __construct(public string $name, public int $id)
+    {
+    }
     public function getImageUrl()
     {
 
         $urlName = $this->name;
-        
         switch (ord(substr($this->name, -1))) {
             case 130:
                 $urlName = mb_substr($this->name, 0, -1);
