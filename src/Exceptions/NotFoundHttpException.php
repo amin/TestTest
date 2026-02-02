@@ -6,4 +6,6 @@ namespace App\Exceptions;
 
 use Exception;
 
-class NotFoundHttpException extends Exception {}
+class NotFoundHttpException extends Exception
+{
+}

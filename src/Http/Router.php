@@ -12,8 +12,9 @@ class Router
     public function direct(string $uri): string
     {
         $uri = parse_url($uri, PHP_URL_PATH);
-        if (!array_key_exists($uri, $this->routes))
+        if (!array_key_exists($uri, $this->routes)) {
             throw new NotFoundHttpException();
+        }
         return $this->routes[$uri];
     }
 }
