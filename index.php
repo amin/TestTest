@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use App\Http\Request;
 use App\Http\Router;
-
 use App\Exceptions\NotFoundHttpException;
 
 require_once __DIR__ . '/bootstrap.php';

@@ -86,4 +86,9 @@ class QueryBuilder
 
         return $result ?: [];
     }
+
+    public function getQuery(): string
+    {
+        return $this->query;
+    }
 }
